@@ -1,0 +1,11 @@
+/*
+   QUANTCONNECT.Com - Democratizing Finance. Empowering Individuals
+   Created Feb-2012 by Jared Broad
+   Override Style Sheet for Full Width Display
+*/
+
+body .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+}

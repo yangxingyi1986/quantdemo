@@ -1,0 +1,486 @@
+<html xmlns="http://www.w3.org/1999/xhtml" id="QuantConnect" class="quantconnect"><head>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/qc.ico">
+
+       <link type="text/css" rel="stylesheet" href="https://cdn.quantconnect.com/web/css/c69fe8b502eca8fe3d9ecbcbe9a865f5.css">
+   <link type="text/css" rel="stylesheet" href="https://www.quantconnect.com/css/qc.splash.css">
+   <link type="text/css" rel="stylesheet" href="https://www.quantconnect.com/css/qc.fullwidth.css">
+</head>
+<body>
+<div class="height-fixer" style="min-height: 100%; position: relative;">
+    <header>
+            <div class="container-fluid" style="padding: 0 15px;background-color: black;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#qc-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="logo" href="https://www.quantconnect.com" class="logo FL clearfix navbar-brand" title="QuantConnect - Democratizing Finance, Empowering Individuals">
+                        <!-- <img src="https://www.quantconnect.com/i/logo.png" border="0" alt="QuantConnect Logo"/> -->
+                        &nbsp;
+                    </a>
+                    <span id="service-name" class="hidden-xs hidden-sm hidden-md">Web</span>
+                </div>
+
+                <div class="navbar-collapse collapse" id="qc-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                                                                                                <li class="top blogButton hidden-sm hidden-md">
+                            <a class="top" href="https://www.quantconnect.com/blog" title="Quant interviews and strategy research.">
+                                <i class="fa fa-list-alt"></i> Blog                            </a>
+                        </li>
+                        <li class="divider-vertical top hidden-sm hidden-md "></li>
+                        <li class="top nav-forum">
+                            <a class="top" href="https://www.quantconnect.com/forum" title="Get help and discuss latest quant matters in the community forums.">
+                                <i class="fa fa-comments"></i> Community                            </a>
+                        </li>
+                        <li class="divider-vertical top nav-forum"></li>
+                        <li class="top nav-terminal">
+                            <a href="https://www.quantconnect.com/terminal" class="top" title="Backtest your algorithms on historical data.">
+                                <i class="fa fa-bar-chart-o"></i> Algorithm Lab                            </a>
+                        </li>
+                        <li class="divider-vertical top nav-terminal"></li>
+                        <li class="top nav-documentation">
+                            <a href="https://www.quantconnect.com/docs" class="top" title="Learn more about how to make the most of QuantConnect in the documentation">
+                                <i class="fa fa-book"></i> Documentation                            </a>
+                        </li>
+                        <li class="divider-vertical top nav-documentation"></li>
+
+                                                    <li class="top dropdown">
+                                <a href="*" class="dropdown-toggle" data-toggle="dropdown" title="Login to QuantConnect" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-lock"></i>
+                                    Sign In                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu" style="right: 0; left: auto;">
+                                    <li style="position: relative;min-width: 182px;">
+                                        <div class="contents">
+                                            <div class="oauth">
+                                                <a class="option" title="Login with Facebook" style="top: 2px; margin-bottom: 9px;" href="https://www.quantconnect.com/index.php?key=processFacebook&amp;inline=true&amp;target=https%3A%2F%2Fwww.quantconnect.com%2F" rel="nofollow">
+                                                    <img src="https://www.quantconnect.com/i/signUpWithFacebook.png" alt="Login with Facebook">
+                                                </a>
+                                                                                                <a class="option" title="Login with Google" href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=https%3A%2F%2Fwww.quantconnect.com%2FprocessGoogle&amp;client_id=510945655446-8ksbldb4jops9uiim0laa2l73lr8qi7t.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=force" rel="nofollow" style="top: 5px;">
+                                                    <img src="https://www.quantconnect.com/i/signUpWithGoogle.png" alt="Login with Google" style="position:relative; top:-10px;">
+                                                </a>
+                                                <span style="display: block;width: 100%;text-align: center;">
+                                                    Or Sign In Manually                                                </span>
+                                                <div style="height: 40px; width: 170px;">
+                                                    <a class="option" href="https://www.quantconnect.com/terminal" title="Sign Up to QuantConnect" style="float: left;left:0;">
+                                                        <button type="button" class="btn btn-warning FL" style="margin: 0px 0px 0px 7px;">Sign Up</button>
+                                                    </a>
+                                                    <a class="option" href="https://www.quantconnect.com/login?target=https%3A%2F%2Fwww.quantconnect.com%2F" style="float: left;" rel="nofollow" title="Login with our existing account">
+                                                        <button type="submit" class="btn btn-default FL" style="margin: 0px; width: 87px;" rel="nofollow">Login</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                    </div></li>
+                                </ul>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container main-container">
+        <div class="row blue-banner" id="bluebanner">
+            <div class="blue-banner-div"></div>
+        </div>
+        <div class="hidden visible-xs visible-sm" style="height:40px;">&nbsp;</div>
+    .full-height {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    h1.big {
+        font-family: 'Open Sans', Helvetica, Droid Sans, Arial, sans-serif !important;
+        color: #d5e7f1;
+    }
+
+    body {
+        background-image: none;
+        background-color: white;
+    }
+
+    .menu-tab-header li {
+        text-align: center;
+    }
+
+    .learn-more-container h2 {
+        color: #555;
+        font-style: italic;
+        font-family: 'Open Sans', Helvetica, Droid Sans, Arial, sans-serif !important;
+    }
+
+    .discussions .thumbnail, .rankings .thumbnail {
+        background: none;
+        margin-bottom: 5px;
+    }
+
+    .dimmed:after {
+        content: " ";
+        z-index: 10;
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #dark-container {
+        min-height: 100%;
+        height: 94vh;
+        position: relative;
+        margin-bottom: 30px;
+        background-color: #333;
+    }
+
+    @media screen and (max-width: 640px) {
+        #dark-container {
+            height: auto !important;
+            display: inline-block;
+        }
+    }
+</style>
+<div class="row" style="min-height: 0px; height: 10px; padding: 0px; position: relative;overflow: hidden;">
+    <img src="/i/banner_s.jpg" style="position: absolute; top: 0px; width: 100%;">
+</div>
+<div class="row splash" id="dark-container">
+
+    <div class="splash-chart" style=" position: absolute; bottom: -100px; left: 0; right: 0%;">
+        <img src="/i/splash.png" class="dimmed" style="bottom: 100px; display: block; position: absolute; width: 100%;">
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="min-height: 100%; height: 100%;">
+
+        <div class="row full-height" style="padding-top: 3px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 full-height">
+                <div class="row full-height">
+                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 full-height">
+                        <h1 class="big">
+                            <div style="margin-top: 10vh; margin-bottom: 33px; line-height: 1.8em;">
+                                <span class="focus">Pioneering Tomorrow's Trading</span>
+                                <br>
+                                <span style="font-size: 28px">Research, Backtest and Trade Your Investments.</span>
+                                <br>
+                            </div>
+                        </h1>
+                        <div class="signup">
+                            <a class="btn btn-lg btn-warning" href="/terminal" title="Build your algorithm in our browser based IDE, or at home using our GIT api." style="text-transform: uppercase; font-size: 18px !important;">
+                                Sign Up for Free                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="long-form" class="row splash" style="display: block;">
+    <div class="col-md-offset-1 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-8 section">
+        <!-- Designer Investments -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <h1 class="head typeface-js">How does it work?</h1>
+
+                <p class="block highlight">
+                    Code your algorithms in a browser based IDE, using template strategies and free tick data.                </p>
+
+                <p class="block">
+                    Backtest your strategies using our free, open data sources. Code in multiple languages, and access our cluster of hundreds of computers to crunch terabytes of free US Equities and FOREX tick data.                </p>
+                <p class="block">
+                    QuantConnect is the next revolution in quant trading, where cloud computing meets open data.                </p>
+
+                <p class="block">
+                    Live trade your strategy on your choice of world leading brokerages and the lowest commissions on the world.                </p>
+            </div>
+
+            <style>
+                #slides .item img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                #slides .screenShots {
+                    margin-top: 0px !important;
+                    width: 100% !important;
+                }
+
+                #slides .owl-buttons {
+                    display: none;
+                }
+
+                .owl-pagination {
+                    margin-bottom: 20px;
+                }
+            </style>
+            <div class="col-md-8">
+                <div id="slides">
+                    <img src="/i/slide_chart.png" style="width: 100%;" class="img-thumbnail img-responsive" alt="Modern charting with equity curves, and price-order plotting.">
+                </div>
+            </div>
+        </div>
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-4 bullet">
+                <div class="icon icon-repeat"></div>
+                <h3 class="title">Unparalleled Speed</h3>
+                <p class="block">
+                    With QuantConnect, your strategy is backtesting on hundreds of servers in parallel, finishing in about 30-seconds. This gives you institutional power from your desktop PC. You can iterate on your ideas faster than you've ever done before.                </p>
+            </div>
+
+            <div class="col-md-4 bullet">
+                <div class="icon icon-data"></div>
+                <h3 class="title">Unlimited Financial Data</h3>
+                <p class="block">
+                    QuantConnect gives you free access to high resolution data for global financial markets to backtest your algorithm in our backtester. We currently have US Equities and FOREX and are adding new data libraries constantly, the sky is the limit.                </p>
+            </div>
+
+            <div class="col-md-4 bullet">
+                <div class="icon icon-institutions"></div>
+                <h3 class="title">World Class Execution</h3>
+                <p class="block">
+                    Our live trading servers are based in NYC and connected to world class execution providers to ensure you have good fills. By negotiating as a community we have established discount trading fees for QuantConnect users.                </p>
+            </div>
+        </div>
+
+        <div class="row" style="margin: 40px 0px;">
+            <div class="col-md-12 action">
+                <div class="title">
+                    Have some great ideas? Lets test it out!                    <a id="build" name="build">&nbsp;</a>
+                    <a href="/terminal" title="Its free to signup and start designing your strategy today" class="btn btn-warning btn-lg">Start Your Algorithm</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Market Place  -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-6">
+<pre class="prettyprint prettyprinted"><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyFirstAlgorithm</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">QCAlgorithm</span><span class="pln"> 
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">override</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Initialize</span><span class="pun">()</span><span class="pln"> 
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">SetStartDate</span><span class="pun">(</span><span class="lit">2011</span><span class="pun">,</span><span class="pln"> </span><span class="lit">01</span><span class="pun">,</span><span class="pln"> </span><span class="lit">01</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">SetEndDate</span><span class="pun">(</span><span class="lit">2012</span><span class="pun">,</span><span class="pln"> </span><span class="lit">12</span><span class="pun">,</span><span class="pln"> </span><span class="lit">31</span><span class="pun">);</span><span class="pln">
+        </span><span class="typ">SetCash</span><span class="pun">(</span><span class="lit">100000</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="com">//Data event - Every minute, second or tick</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">OnData</span><span class="pun">(</span><span class="typ">TradeBars</span><span class="pln"> data</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+	    </span><span class="com">//Your strategy here!</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+            </div>
+            <div class="col-md-6">
+                <h1 class="head typeface-js">Event Driven Strategies</h1>
+                <p class="block">
+                    Designing an algorithm couldn't be easier. With only 2 required functions we take care of everything else! You just <code>Initialize()</code> and then handle the data-events you requested. You can create new indicators, classes, folders and files.                </p>
+                <p class="block">
+                    We are committed to giving you the best possible algorithm design experience.                </p>
+            </div>
+        </div>
+
+        <!-- Platform for Innovation -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-6">
+                <h1 class="head typeface-js">Built for Speed</h1>
+                <p class="block">
+                    Just as highways revolutionized travel, we are providing infrastructure to enable rapid strategy design and testing at speeds you've never seen before.                </p>
+                <p class="block">
+                    5-10 year second or tick data strategies, across gigabytes of data complete in <b>30-60 seconds</b>. Roughly 50x faster than possible on your home computer.                </p>
+                <p class="block">
+                    You don't need to wait for your backtest to complete! Keep coding and it will notify you when completed.                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="/i/splashPlatform.jpg" alt="Platform for innovation" style="max-width: 100%; position: relative;">
+            </div>
+        </div>
+
+
+        <!-- The QC Standard  -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-6">
+                <img src="/i/splashRaiseCapital.jpg" alt="Raise capital with quant investors" style="max-width: 100%; height: auto; position: relative; ">
+            </div>
+            <div class="col-md-6">
+                <h1 class="head typeface-js">Leverage your Potential</h1>
+                <p class="block">
+                    With your permission we'll introduce you to capital providers to fund your strategy with <b>millions</b> in trading capital. Leverage your potential and earn a great return from your ideas.                </p>
+                <p class="block">
+                    First and foremost, your ideas are your property and yours to do with as you like. If you'd prefer to remain independent we'll happily help you execute through your broker of choice.                </p>
+                <p class="block">
+                    <b>We carefully selected our investors and partners to avoid conflicts of interest.</b> Our interests are aligned with yours, so lets create the next revolution in finance.                </p>
+            </div>
+        </div>
+
+        <div class="row" style="margin: 40px 0px;">
+            <div class="col-md-12 action">
+                <div class="title">
+                    Explore our data library to create your strategy                    <a id="crowd" name="data">&nbsp;</a>
+                    <a class="btn btn-warning btn-lg" href="/signup" title="Sign up for free to start designing your algorithms">
+                        <div class="FL">Sign Up &nbsp; &nbsp;</div>
+                        <div class="arrow-right" style="margin-top: 5px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Data Library  -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-12">
+                <h1 class="head typeface-js">Professional Quality, Open Data Library</h1>
+                <p class="block highlight">
+                    Design strategies with a multi-terabyte financial data library, spanning global markets, worth over $100,000 at your disposal.                </p>
+            </div>
+        </div>
+
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-4 bullet">
+                <div class="icon icon-data"></div>
+                <h3 class="title">US Equities</h3>
+                <p class="block">
+                    We offer US equities tick data going back to January 1998, and updated daily with yesterday's latest market data. We have every symbol traded, totaling over 16,000 stocks. Data provided by                    <a href="/data/Stocks" title="Open the data library to our stock data.">QuantQuote</a>.
+                </p>
+
+                <div class="icon icon-currency"></div>
+                <h3 class="title">FOREX Majors</h3>
+                <p class="block">
+                    We have the FX tick data on 13 major currency pairs going back to April 2007, and updated daily with yesterday's market data. Data provided by                    <a href="/data/FOREX" title="View the data library and FXCM dataset">FXCM</a>. See more details on exactly what pairs in our                    <a href="/data">Data library</a>.
+                </p>
+            </div>
+            <div class="col-md-8 bullet">
+<pre class="prettyprint prettyprinted"><span class="com">//Add Security Function Pattern - Request asset data.</span><span class="pln">
+</span><span class="typ">AddSecurity</span><span class="pun">(</span><span class="typ">SecurityType</span><span class="pln"> marketType</span><span class="pun">,</span><span class="pln">
+	    </span><span class="kwd">string</span><span class="pln"> symbol</span><span class="pun">,</span><span class="pln">
+	    </span><span class="typ">Resolution</span><span class="pln"> resolution </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Resolution</span><span class="pun">.</span><span class="typ">Minute</span><span class="pun">,</span><span class="pln">
+	    </span><span class="kwd">bool</span><span class="pln"> fillDataForward </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+	    </span><span class="kwd">int</span><span class="pln"> leverage </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+	    </span><span class="kwd">bool</span><span class="pln"> includePremarketData </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">//For example - requesting market data:</span><span class="pln">
+</span><span class="typ">AddSecurity</span><span class="pun">(</span><span class="typ">SecurityType</span><span class="pun">.</span><span class="typ">Equity</span><span class="pun">,</span><span class="pln"> </span><span class="str">"IBM"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Resolution</span><span class="pun">.</span><span class="typ">Second</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">AddSecurity</span><span class="pun">(</span><span class="typ">SecurityType</span><span class="pun">.</span><span class="typ">Forex</span><span class="pun">,</span><span class="pln"> </span><span class="str">"EURUSD"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Resolution</span><span class="pun">.</span><span class="typ">Minute</span><span class="pun">);</span></pre>
+            </div>
+        </div>
+
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-xs-12 col-md-3">
+                <a href="/data/Stocks">
+                    <img src="/i/quantquote.png" alt="QuantQuote Logo" style="max-width: 100%;">
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <a href="/data/FOREX">
+                    <img src="/i/fxcm.gif" alt="FXCM Logo" style="max-width: 100%;">
+                </a>
+            </div>
+        </div>
+
+        <!-- The Brokerages -->
+        <div class="row" style="margin: 40px 0px;">
+            <div class="col-md-12 action">
+                <div class="title">
+                    World Leading Brokerage Execution <a id="crowd" name="data">&nbsp;</a>
+                    <a class="btn btn-warning btn-lg" href="/signup" title="Live trade your strategy">
+                        <div class="FL">Trade Live &nbsp; &nbsp;</div>
+                        <div class="arrow-right" style="margin-top: 5px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brokerage Connections  -->
+        <div class="row section" style="margin: 40px 0px;">
+            <div class="col-md-12">
+                <h1 class="head typeface-js">Lowest Equities Trading Fees Ever Seen in Industry</h1>
+                <p class="block highlight">
+                    We've integrated with world leading brokerages to provide the best execution and prices to the community.                </p>
+            </div>
+        </div>
+
+        <div class="row section" style="margin: 40px 0px; margin-bottom: 125px;">
+            <div class="col-md-6 bullet">
+                <div class="icon icon-repeat"></div>
+                <h3 class="title">Tradier Brokerage - $1/Trade</h3>
+                <p class="block" style="text-align: left;">
+                    Through our integration with Tradier Brokerage, we can offer $1 per Equity Trade for an unlimited number of shares. Tradier is the first Brokerage API company, powering the world's leading trading, investing and digital advisor platforms.                    <a target="_BLANK" href="https://brokerage.tradier.com/register/account-information/?utm_campaign=QuantConnect_Quant1&amp;utm_medium=Referral&amp;utm_source=QuantConnect">
+                        Open a Tradier account today.                    </a>
+                </p>
+            </div>
+            <div class="col-md-6 bullet">
+                <div class="icon icon-repeat"></div>
+                <h3 class="title">Interactive Brokers - $1 Minimum, $0.005/Share</h3>
+                <p class="block" style="text-align: left;">
+                    Interactive Brokers (IB) is a low cost provider of trade execution and clearing services for individuals, advisors, prop trading groups, brokers and hedge funds. IB's premier technology provides direct access to stocks, options, futures, forex, bonds and funds on over 100 markets worldwide from a single IB Universal account. Member NYSE, FINRA, SIPC.                    <a target="_BLANK" href="https://gdcdyn.interactivebrokers.com/en/?f=%2Fen%2Fpagemap%2Fpagemap_newaccounts.php%3Ftr_ref_id%3D11402">Open an Interactive Brokers account today.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div> <!-- End of Container -->
+
+<div class="footer-wrapper" style="position: absolute; bottom: 0px; left: 0px; right: 0px; padding: 0px; max-width: 100%; background-color: #292929; border-top: 1px solid #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);">
+    <div class="container">
+        <div class="footer" id="footer" style="border: none;">
+            <div class="row ">
+                <div class="col-md-12  hidden-xs">
+                    <ul class="pull-left" style="padding-left: 0px;">
+                                                    <li style="margin-left: 0px;">
+                                <a class="footerLink" href="https://www.quantconnect.com/signup" onclick="qcm.signUp(); return false;">Sign Up</a>
+                            </li>
+                                                <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/forum">Community</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/blog">Blog</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/team">Team</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="footerSocial" style="width: 50%;">
+                        <div class="footerTwitter">
+                            <iframe src="https://ghbtns.com/github-btn.html?user=QuantConnect&amp;repo=Lean&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                        </div>
+                        <div class="footerFacebook">
+                            <iframe src="https://ghbtns.com/github-btn.html?user=QuantConnect&amp;repo=Lean&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottom">
+                <div class="col-md-12">
+                    <ul class="pull-left hidden-xs" style="padding-left: 0px;">
+                        <li style="margin-left: 0px;">
+                            <a class="footerLink" href="https://www.quantconnect.com/status" target="_BLANK">Status</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/data">Data Library</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/pressSnippets">Press</a>
+                        </li>
+                        <li>
+                            <a class="footerLink" href="https://www.quantconnect.com/terms">Terms and Conditions</a>
+                        </li>
+                                            </ul>
+                    <div class="pull-right">
+                        QuantConnect ? 2016. All Rights Reserved.                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div> <!-- End of Wrapper -->
+
+</body>
+<iframe src="https://www.quantconnect.com/processHuman" width="1" height="1" style="display: none;"></iframe>
+</html>

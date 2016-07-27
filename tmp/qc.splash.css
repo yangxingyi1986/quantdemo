@@ -1,0 +1,94 @@
+/*
+   QUANTCONNECT.Com - Democratizing Finance. Empowering Individuals
+   Created December-2011 by Jared Broad
+   Splash Page Page Specific:
+*/
+
+.HLTStdCondensed { font-family:'Open Sans Condensed', Helvetica, Droid Sans, Arial, sans-serif; letter-spacing: 1.5px; }
+
+.splash .rule {float: left; }
+.splash .subnav { background: white; margin: 0px; }
+.splash .subnav h2 { color: #333; font-family:'Open Sans Condensed', Helvetica, Droid Sans, Arial, sans-serif; letter-spacing: 1.5px; font-size: 30px; line-height: 16px; margin-top: 10px; }
+.splash .subnav ul li { width: 33%; float: left; }
+.splash .subnav ul li a:hover { background-color: #fff; }
+.splash .sticky { top: 57px; }
+.splash .slides { width: 490px; height: 310px; overflow: hidden; }
+.splash h1 { font-weight: normal; font-size: 32px; }
+.splash h1 .focus { font-size: 46px; line-height: 1.8;}
+
+.splash .widget .row { margin-top: 20px; margin-bottom: 20px; }
+.splash .widget .section { padding: 15px; padding-right: 5px; padding-top: 0px; padding-bottom: 0px;}
+
+.splash .banner { position:absolute; top: 0px; left: 0px; width: 100%; height: 10px; max-width:9999px; background: url(/i/banner_s.jpg) center center; border-radius: 0px; padding: 0px; min-height: 10px; }
+
+.splash .menu h2 { float: left; text-align: center; font-weight: normal; }
+.splash .menu:hover h2 { color: #ffb715; }
+.splash .icon { margin: 4px 6px 0px 0px; float: left; width: 30px; height: 30px; background: url(/i/splashIcons.png); }
+.splash .smarter .icon { background-position: 0px 0px; }
+.splash .menu:hover .smarter .icon { background-position: 0px -30px; }
+.splash .crowd .icon { background-position: -180px 0px; }
+.splash .menu:hover .crowd .icon { background-position: -180px -30px; }
+.splash .build .icon { background-position: -59px 0px; }
+.splash .menu:hover .build .icon { background-position: -59px -30px; }
+
+.splash .icon-chart2 { background-position: -90px 0px; }
+.splash .icon-institutions { background-position: -662px 0px; }
+.splash .icon-people { background-position: -622px 0px; width: 35px; }
+.splash .icon-shield { background-position: -120px 0px; }
+.splash .icon-repeat { background-position: -150px 0px; }
+.splash .icon-data { background-position: -180px 0px; }
+.splash .icon-power { background-position: -269px 0px; }
+.splash .icon-wand { background-position: -421px 0px; }
+.splash .icon-error { background-position: -298px 0px; }
+.splash .icon-cloud { background-position: -210px 0px; }
+.splash .icon-simulator { background-position: -240px 0px; }
+.splash .icon-currency { background-position: -560px 0px; }
+.splash .icon-sentiment { background-position: -620px 0px; width:35px; }
+.splash .icon-gift { background-position: -780px 0px; }
+
+.icon-wrench:before { content: none; }
+.icon-rotate-right:before, .icon-repeat:before { content: none; }
+
+.splash .active h2 { color: #ffb715; }
+.splash .active .icon { background-position-y: -30px;}
+
+.splash .hero h1.big { line-height: 48px; text-align: center; }
+.splash .hero .definition { position: absolute; bottom: 23px; font-style: italic; }
+.splash .hero .signup {position: absolute; left: 50%; margin-left: -130px; }
+.splash .hero .signup a {  }
+
+.splash .head { font-family:'Open Sans Condensed', Helvetica, Droid Sans, Arial, sans-serif !important; letter-spacing: 1.5px; margin-top: 30px; margin-bottom: 20px; font-size: 40px;  }
+.splash .block { font-family: 'Droid Sans', Helvetica, Arial, San Serif; font-size: 14px; line-height: 22px; }
+.splash .highlight { font-family: 'Droid Sans', Helvetica, Arial, San Serif; font-size: 18px; line-height: 22px; }
+.splash .bullet .title { font-family: 'Droid Sans', Helvetica, Droid Sans, Arial, sans-serif; letter-spacing: 1.5px; font-weight: normal; font-size: 18px; text-transform: uppercase; margin-bottom: 10px; color:#333; }
+.splash .bullet .icon {  position: relative; position: relative; margin-bottom: -10px; top: -10px; }
+
+.splash .action { background-color: #333;  display: inline-block;  margin-top: 10px; margin-bottom: 10px ; width: 100%; }
+.splash .action .title { float: left; display: inline-block; color: #ffffff; font-family: 'Open Sans Condensed', Helvetica, Droid Sans, Arial, sans-serif; letter-spacing: 1.5px; font-size: 28px; line-height: 120px; margin-left: 20px; }
+.splash .action .btn .arrow-right { width: 0; height: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 8px solid white; float: right; }
+
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+	.splash h1 { font-size: 16px; }
+	.splash h1 .focus { font-size: 20px; }
+	.splash .button-description { font-size: 0.8em; }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+	.splash h1 { font-size: 20px; }
+	.splash h1 .focus { font-size: 28px; }
+	.splash .button-description { font-size: 0.8em; }
+}
+
+@media screen and (max-width: 1200px) {
+	.splash h1 { font-size: 24px; }
+	.splash h1 .focus { font-size: 32px; }
+}
