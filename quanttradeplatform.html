@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="QuantConnect" class="quantconnect"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="./css/quant.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.splash.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.fullwidth.css">
+	<link type="text/css" rel="stylesheet" href="./css/quanttradeplatform.css">
+	<link type="text/css" rel="stylesheet" href="./css/extjs01.css">
+	<script type="text/javascript" async="" src="./js/plusone.js"></script>
+	<script id="facebook-jssdk" src="./js/all.js#xfbml=1&appId=147227222023467"></script>
+	<script async="" src="./js/analytics.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./js/ext-all.js"></script>
+	<script type="text/javascript" src="./js/ace/ace.js"></script>
+	<!--<script type="text/javascript" src="./js/ace/theme-kuroir.js" charset="utf-8"></script>-->
+	<script type="text/javascript" src="./js/ace/theme-tomorrow_night.js" charset="utf-8"></script>
+	<script type="text/javascript" src="./js/ace/mode-c_cpp.js" charset="utf-8"></script>
+	<script type="text/javascript" src="./data/stock-DJI.js"></script>
+	<script type="text/javascript" src="./js/echarts.min.js"></script>
+
+    <title>金水桥投资</title>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', './js/analytics.js', 'ga');
+        ga('create', 'UA-24797423-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+		Ext.onReady(function () {
+			var editor = ace.edit("code-area");
+			editor.setTheme("ace/theme/tomorrow_night");
+			var JavaScriptMode = ace.require("ace/mode/c_cpp").Mode;
+			editor.session.setMode(new JavaScriptMode());
+			editor.setValue('namespace QuantConnect\n{   \n    public class BasicTemplateAlgorithm : QCAlgorithm\n    {\n        //Initialize the data and resolution you require for your strategy:\n        public override void Initialize() \n        {\n            //Start and End Date range for the backtest:\n            SetStartDate(2013, 1, 1);         \n            SetEndDate(DateTime.Now.Date.AddDays(-1));\n            //Cash allocation\n            SetCash(25000);\n            //Add as many securities as you like. All the data will be passed into the event handler:\n            AddSecurity(SecurityType.Equity, "SPY", Resolution.Minute);\n        }\n        //Data Event Handler: New data arrives here. "TradeBars" type is a dictionary of strings so you can access it by symbol.\n        public void OnData(TradeBars data) \n        {   \n            // "TradeBars" object holds many "TradeBar" objects: it is a dictionary indexed by the symbol:\n            // \n            //  e.g.  data["MSFT"] data["GOOG"]\n            if (!Portfolio.HoldStock) \n            {\n                int quantity = (int)Math.Floor(Portfolio.Cash / data["SPY"].Close);\n                //Order function places trades: enter the string symbol and the quantity you want:\n                Order("SPY",  quantity);\n                //Debug sends messages to the user console: "Time" is the algorithm time keeper object \n                Debug("Purchased SPY on " + Time.ToShortDateString());\n                //You can also use log to send longer messages to a file. You are capped to 10kb\n                //Log("This is a longer message send to log.");\n            }\n        }\n    }\n}');
+			
+			var bodyWidth =Ext.getBody().getWidth();
+			var bodyHeight = Ext.getBody().getHeight();
+			var menuheight = bodyHeight - 60;
+			Ext.select(".menu-tab-header").first().setStyle("height",menuheight + "px");
+			Ext.select("#code-area").first().setStyle("height", (menuheight - 35) + "px" );
+			Ext.select("#code-area").first().setStyle("width", "600px");
+			Ext.select("#menu-content").first().setStyle("width", "630px");
+			Ext.select("#content").first().setStyle("width",(bodyWidth - 630 - bodyWidth * 0.084) + "px");
+			Ext.select("#content").first().setStyle("height",menuheight + "px");
+			
+			var data = splitData(stockRawData);
+			var myChart = echarts.init(Ext.select("#chartcontent").first().dom);
+			var option = {
+				backgroundColor:'#eee',
+				animation:true,
+				title:{
+					text:'为实现利润 3576.32  实现利润 -256.0  手续费 20.36  收益率 5.2%  资产总值 236842.89',
+					x:'center',
+					y:'15',
+					textStyle:{
+						fontSize:13
+					}
+				},
+				legend:{
+					show:false
+				},tooltip:{
+					show:false
+				},
+				toolbox:{
+					show:false
+				},
+				brush:{
+					xAxisIndex:'all',
+					brushLink:'all',
+					outOfBrush:{
+						colorAlpha:0.7
+					}
+				},
+				grid:[
+					{left:'10%',right:'8%',height: '50%'},
+					{left:'10%',right:'8%',top: '63%',height: '16%'}
+				],
+				xAxis: [
+					{
+						type: 'category',
+						data: data.categoryData,
+						scale: true,
+						boundaryGap : false,
+						axisLine: {onZero: false},
+						splitLine: {show: false},
+						splitNumber: 20,
+						min: 'dataMin',
+						max: 'dataMax'
+					},
+					{
+						type: 'category',
+						gridIndex: 1,
+						data: data.categoryData,
+						scale: true,
+						boundaryGap : false,
+						axisLine: {onZero: false},
+						axisTick: {show: false},
+						splitLine: {show: false},
+						axisLabel: {show: false},
+						splitNumber: 20,
+						min: 'dataMin',
+						max: 'dataMax'
+					}
+				],
+				yAxis: [
+					{
+						scale: true,
+						splitArea: {
+							show: true
+						}
+					},
+					{
+						scale: true,
+						gridIndex: 1,
+						splitNumber: 2,
+						axisLabel: {show: false},
+						axisLine: {show: false},
+						axisTick: {show: false},
+						splitLine: {show: false}
+					}
+				],
+				dataZoom: [
+					{
+						type: 'inside',
+						xAxisIndex: [0, 1],
+						start: 98,
+						end: 100
+					},
+					{
+						show: true,
+						xAxisIndex: [0, 1],
+						type: 'slider',
+						top: '85%',
+						start: 98,
+						end: 100
+					}
+				],
+				series: [
+					{
+						name: 'Dow-Jones index',
+						type: 'candlestick',
+						data: data.values,
+						itemStyle: {
+							normal: {
+								borderColor: null,
+								borderColor0: null
+							}
+						},
+						tooltip: {
+							formatter: function (param) {
+								var param = param[0];
+								return [
+									'Date: ' + param.name + '<hr size=1 style="margin: 3px 0">',
+									'Open: ' + param.data[0] + '<br/>',
+									'Close: ' + param.data[1] + '<br/>',
+									'Lowest: ' + param.data[2] + '<br/>',
+									'Highest: ' + param.data[3] + '<br/>'
+								].join('');
+							}
+						}
+					},
+					{
+						name: 'MA5',
+						type: 'line',
+						data: calculateMA(5, data),
+						smooth: true,
+						lineStyle: {
+							normal: {opacity: 0.5}
+						}
+					},
+					{
+						name: 'MA10',
+						type: 'line',
+						data: calculateMA(10, data),
+						smooth: true,
+						lineStyle: {
+							normal: {opacity: 0.5}
+						}
+					},
+					{
+						name: 'MA20',
+						type: 'line',
+						data: calculateMA(20, data),
+						smooth: true,
+						lineStyle: {
+							normal: {opacity: 0.5}
+						}
+					},
+					{
+						name: 'MA30',
+						type: 'line',
+						data: calculateMA(30, data),
+						smooth: true,
+						lineStyle: {
+							normal: {opacity: 0.5}
+						}
+					},
+					{
+						name: 'Volumn',
+						type: 'bar',
+						xAxisIndex: 1,
+						yAxisIndex: 1,
+						data: data.volumns
+					}
+				]
+			}
+			myChart.setOption(option);
+			
+			myChart.dispatchAction({
+				type: 'brush',
+				areas: [
+					{
+						brushType: 'lineX',
+						coordRange: ['2016-05-02', '2016-06-20'],
+						xAxisIndex: 0
+					}
+				]
+			});
+		});
+		Ext.EventManager.onWindowResize(function(width,height){//改变窗口的时候会提示出窗口的宽高
+			//alert('width:'+width+',height:'+height);
+			var menuheight = height - 60;
+			Ext.select(".menu-tab-header").first().setStyle("height",menuheight + "px");
+			Ext.select("#code-area").first().setStyle("height", (menuheight - 35) + "px" );
+		});
+		
+		function splitData(rawData){
+			rawData = JSON.parse(rawData);
+			var categoryData = [];
+			var values = [];
+			var volumns = [];
+			for(var index = 0 ; index < rawData.length ; index ++){
+				categoryData.push(rawData[index].splice(0,1)[0]);
+				values.push(rawData[index]);
+				if(index % 3 > 1){
+					volumns.push(rawData[index][4]);
+				}else{
+					volumns.push(rawData[index][4]);
+				}
+			}
+			return {categoryData:categoryData,values:values, volumns:volumns};
+		}
+		function calculateMA(dayCount, data){
+			var result = [];
+			for (var i = 0, len = data.values.length; i < len; i++) {
+				if (i < dayCount) {
+					result.push('-');
+					continue;
+				}
+				var sum = 0;
+				for (var j = 0; j < dayCount; j++) {
+					sum += data.values[i - j][1];
+				}
+				result.push(+(sum / dayCount).toFixed(3));
+			}
+			return result;
+		}
+	</script>
+</head>
+<body>
+	<div class="height-fixer" style="min-height: 100%; position: relative;">
+		
+		<header>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid" style="padding: 0 15px;background-color: #194d5b;">
+					<div class="navbar-header">
+						<a id="logo" href="#" class="logo FL clearfix navbar-brand" title="">
+							&nbsp;金水桥投资&nbsp;
+						</a>
+					</div>
+					<div class="navbar-collapse collapse" id="qc-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="top blogButton hidden-sm hidden-md">
+								<a class="top" href="#" title="Quant interviews and strategy research.">
+									<i class="fa fa-list-alt"></i>
+									博客
+								</a>
+							</li>
+							<li class="divider-vertical top hidden-sm hidden-md "></li>
+							<li class="top nav-documentation">
+								<a href="#" class="top" title="">
+									<i class="fa fa-book"></i>
+									文档
+									</a>
+							</li>
+							<li class="divider-vertical top nav-documentation"></li>
+							<li class="top dropdown">
+								<a href="#" class="dropdown-toggle" style="padding-left:10px;" data-toggle="dropdown" title="" role="button" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-lock"></i>
+									&nbsp;登录
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu" style="right: 0; left: auto;">
+									<li style="position: relative;min-width: 182px;">
+										<div class="contents">
+											<div class="oauth">
+												<div style="height: 40px; width: 170px;margin-top:10px;">
+													<a class="option" href="#" title="Sign Up to QuantConnect" style="float: left;left:0;">
+														<button type="button" class="btn btn-warning FL" style="margin: 0px 0px 0px 10px; width: 75px;">注册</button>
+													</a>
+													<a class="option" href="#" style="float: left;" rel="nofollow" title="Login with our existing account">
+														<button type="submit" class="btn btn-default FL" style="margin: 0px 10px 0px 0px; width: 75px;" rel="nofollow">登录</button>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<div id="body-container" class="container full-width body-container show-menu" style="left: 0px;">
+        <div class="row body-row">
+            <div id="menu" class="col-xs-1 col-md-1 col-lg-1 col-xl-1 tabs-left" style="height:100%;">
+                <!-- ko ifnot:Controllers.Live.isLive -->
+                <ul class="nav nav-tabs menu-tab-header">
+                    <li role="presentation" class="clickable" data-bind="click:QCS.Views.Menu.OnFeedClick" title="Community Discussion Feed">
+                        <a data-toggle="tab" href="#feed" aria-expanded="true"><i class="fa fa-rss button-icons"></i> <br>
+                            <span class="button-description">我的云空间</span>
+                        <span data-bind="visible:QCS.Models.Feed.iNewDiscussions() > 0,text:QCS.Models.Feed.iNewDiscussions()" class="badge badge-gold" style="display: none;">0</span>
+                        </a></li>
+                    <li role="presentation" class="clickable" id="university-menu-tab" title="University Tutorial Videos">
+                        <a data-toggle="tab" href="#university" aria-expanded="false"><i class="fa fa-graduation-cap button-icons"></i> <br>
+                            <span class="button-description">数据管理</span></a>
+                    </li>
+                    <li role="presentation" class="clickable" id="live-projects-menu" title="Live Projects Control Panel">
+                        <a data-toggle="tab" href="#liveProjects" aria-expanded="false">
+                            <i class="fa fa-bolt button-icons"></i> <br>
+                            <span class="button-description">我的策略</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="menu-content" class="col-md-3 hide-menu tab-content">
+				
+				<div class="tabTagBox">
+					<ul class="tabTagList">
+						<li class="btn"><i class="fa fa-angle-double-up" style="margin-left:-3px" aria-hidden="true">&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li class="tag01 current btn">RSI<br>策<br>略<br>.<br>cpp</li>
+						<li class="tag01 btn">指<br>数<br>套<br>利<br>策<br>略<br>.<br>cs</li>
+						<li class="tag01 btn">隐<br>藏<br>马<br>可<br>夫<br>链<br>.<br>py</li>
+						<li class="tag01 btn">隐<br>含<br>波<br>动<br>率<br>.<br>R</li>
+						<li class="btn"><i class="fa fa-angle-double-down" style="margin-left:-3px" aria-hidden="true"></i></li>
+					</ul>
+				</div>
+                <div class="toolbar" id="toolbar">
+					<div class="toolbar-inner">
+						<div class="left inline-block">
+							<div id="algo-save-button" class="btn">
+								<span class="button-label">
+									<span class="active-text" id="save-span" title="保存策略(Ctrl+S)">
+										<i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;<span class="underlined_char">保&nbsp;&nbsp;存</span>
+									</span>
+								</span>
+							</div>
+							<div id="validate-button" class="btn" data-original-title="" title="" data-step="3" data-intro="点击“编译运行”进行快速回测" data-position="right">
+								<img src="https://joinquant-static.b0.upaiyun.com/algorithm/img/loader_R.gif" class="loading hidden build-loading">
+								<span class="button-label">
+									<span class="active-text" id="buildBtn" title="编译运行(Ctrl+Alt+B)">
+										<i class="fa fa-play" aria-hidden="true"></i>&nbsp;<span>编译运行</span>
+									</span>
+								</span>
+							</div>
+							<div id="backtest-button" class="btn" data-original-title="" title="" data-step="3" data-intro="快速回测" data-position="right">
+								<span class="button-label">
+									<span class="active-text" id="buildBtn" title="">
+										<i class="fa fa-history" aria-hidden="true"></i>&nbsp;<span>回&nbsp;&nbsp;测</span>
+									</span>
+								</span>
+							</div>
+							<div id="live-button" class="btn" data-original-title="" title="" data-step="3" data-intro="快速回测" data-position="right">
+								<span class="button-label">
+									<span class="active-text" id="buildBtn" title="">
+										<i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;<span>实&nbsp;&nbsp;盘</span>
+									</span>
+								</span>
+							</div>
+							<ul class="menu btn" style="float:right;">
+								<li><a href="#">编码语言</a>
+									<ul>
+										<li><a href="#" class="documents">C++</a></li>
+										<li><a href="#" class="messages">C#</a></li>
+										<li><a href="#" class="signout">Python</a></li>
+										<li><a href="#" class="documents">R</a></li>
+										<li><a href="#" class="messages">Matlab</a></li>
+										<li><a href="#" class="signout">VB</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="">
+								<img class="loading">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-m-12 col-sm-12 col-xs-12 ace_editor ace-chrome" style="position: relative;font-size: 12px;" data-bind="text: oFile.sContent,attr: { 'id' : oFile.codeContainerId }" id="code-area"></div>
+                
+            </div>
+            <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content">
+                <!-- Start Tabs  -->
+				<div id="chartcontent" style="width:100%;height:70%;">
+				</div>
+				<div id="tablecontent" class="lanrenzhijia" style="width:100%;height:29%;overflow:auto;">
+					<div class="title cf">
+						<ul class="title-list fr cf ">
+							<li class="on">投资绩效概览</li>
+							<li>交易</li>
+							<li>日志</li>
+							<p><b></b></p>
+						</ul>
+					</div>
+					<div class="product-wrap">
+						<div class="product" style="display: block;">
+							<table class="kpi_all">
+								<tr style="background-color:#eee"><td>总交易数</td><td>5</td><td>复利收益</td><td>15.35%</td></tr>
+								<tr><td>夏普率</td><td>2.75</td><td>最大回撤</td><td>-5.85%</td></tr>
+								<tr style="background-color:#eee"><td>alpha</td><td>0.03</td><td>beta</td><td>1.76</td></tr>
+								<tr><td>赚钱交易数</td><td>3</td><td>正收益</td><td>28.35%</td></tr>
+							</table>
+						</div>
+						<div class="product">
+						</div>
+						<div class="product">
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+		
+		
+	</div>
+
+</body>
+</html>
