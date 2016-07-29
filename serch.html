@@ -109,11 +109,22 @@
 			<div id="long-form" class="row splash" style="display: block;">
 				<div class="col-md-offset-1 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-8 section">
 						
-					<div style="padding: 40px 15px 15px 15px">
-						<form>
-							<input type="text" name="w" />
-							<input type="submit" value="搜索" />
-						</form>
+					<div style="padding: 40px 150px 15px 150px">
+							<div class="row">
+								<div class="col-xs-14">
+									<div class="row search-row hide-on-mobile-tag-tab">
+										<div class="col-xs-14 col-sm-9 search-input-area active" style="width:100%;">
+											<div class="quanto-form">
+												<div class="form-group">
+													<span class="quanto-icon icon-search"></span>
+													<a class="quanto-icon icon-close icon-close-wrapper hidden"></a>
+													<input class="form-control" id="search-box" placeholder="快速检索" type="text">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 					</div>
 					<div style="padding: 7px 15px">
 						<B>筛选> 数据：股票数据 </B>
@@ -217,7 +228,7 @@
 					</div>
 					<br/>
 
-					<div style="padding: 2px 15px 50px 15px;">
+					<div style="padding: 2px 15px 15px 15px;">
 						<table class="stockdata" border="1" width="100%">
 							<tr>
 								<th bgcolor="#C5D9F1" align="right">代码</th>
@@ -321,7 +332,36 @@
 						</div>
 					</div>
 					
-					
+					<div id="stockapi" style="padding: 2px 15px 50px 15px;">
+						<h2 id="股票数据" style="line-height">股票API接口</h2>
+						<h3 id="股票概况">股票API概况</h3>
+						<p>更多API的可参考<a href="#">官方API文档</a></p>
+						<h4 id="获取单支股票数据">获取单支股票数据</h4>
+						<p>获取单支股票的信息.</p>
+						<p><strong>调用方法</strong></p>
+						<pre class="prettyprint"><code class="language-python hljs ">get_security_info(code)</code></pre>
+						<p><strong>参数</strong></p>
+						<ul>
+							<li>code: 证券代码</li>
+						</ul>
+						<p><strong>返回值</strong></p>
+						<ul>
+							<li>一个对象, 有如下属性: <br>
+							<ul><li>display_name # 中文名称</li></ul></li>
+							<li>name # 缩写简称 <br>
+							<ul><li>start_date # 上市日期, [datetime.date] 类型</li>
+							<li>end_date # 退市日期， [datetime.date] 类型, 如果没有退市则为2200-01-01</li>
+							<li>type # 类型，stock(股票)，index(指数)，etf(ETF基金)，fja（分级A），fjb（分级B）</li>
+							<li>parent # 分级基金的母基金代码</li></ul></li>
+						</ul>
+						<p><strong>示例</strong></p>
+						<pre class="prettyprint">
+							<code class="language-python hljs ">
+								<span class="hljs-comment"># 输出平安银行信息</span>
+								log.info(get_security_info(<span class="hljs-string">'000001.XSHE'</span>))
+							</code>
+						</pre>
+					</div>
 				</div>
 			</div>
 
@@ -352,9 +392,9 @@
 				</div>
 				<div class="wp20 fleft">
 					<div class="item title">友情链接</div>
-					<div class="item"><a href="#">云帆科技</a></div>
+					<div class="item"><a href="#">金水桥科技</a></div>
 				</div>
-				<div class="copyright clear">云帆科技 © 2016. All Rights Reserved.</div>
+				<div class="copyright clear">金水桥科技 © 2016. All Rights Reserved.</div>
 			</div>
 		</div>
 
