@@ -27,6 +27,24 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
 	</script>
+	
+	<style type="text/css"> 
+		.confluenceTable,.table-wrap{margin:10px 0 0 0;overflow-x:auto}
+		.confluenceTable:first-child,.table-wrap:first-child{margin-top:0}
+		table.confluenceTable th.confluenceTh,table.confluenceTable th.confluenceTh>p,table.confluenceTable td.confluenceTd.highlight,table.confluenceTable td.confluenceTd.highlight>p,table.confluenceTable th.confluenceTh.highlight-grey,table.confluenceTable th.confluenceTh.highlight-grey>p,table.confluenceTable td.confluenceTd.highlight-grey,table.confluenceTable td.confluenceTd.highlight-grey>p{background-color:#f0f0f0}
+		table.confluenceTable th.confluenceTh.info,table.confluenceTable th.confluenceTh.info>p,table.confluenceTable td.confluenceTd.highlight.info,table.confluenceTable td.confluenceTd.highlight.info>p,table.confluenceTable th.confluenceTh.highlight-blue,table.confluenceTable th.confluenceTh.highlight-blue>p,table.confluenceTable td.confluenceTd.highlight-blue,table.confluenceTable td.confluenceTd.highlight-blue>p{background-color:#e0f0ff}
+		table.confluenceTable th.confluenceTh.success,table.confluenceTable th.confluenceTh.success>p,table.confluenceTable td.confluenceTd.highlight.success,table.confluenceTable td.confluenceTd.highlight.success>p,table.confluenceTable th.confluenceTh.highlight-green,table.confluenceTable th.confluenceTh.highlight-green>p,table.confluenceTable td.confluenceTd.highlight-green,table.confluenceTable td.confluenceTd.highlight-green>p{background-color:#ddfade}
+		table.confluenceTable th.confluenceTh.warning,table.confluenceTable th.confluenceTh.warning>p,table.confluenceTable td.confluenceTd.highlight.warning,table.confluenceTable td.confluenceTd.highlight.warning>p,table.confluenceTable th.confluenceTh.highlight-red,table.confluenceTable th.confluenceTh.highlight-red>p,table.confluenceTable td.confluenceTd.highlight-red,table.confluenceTable td.confluenceTd.highlight-red>p{background-color:#ffe7e7}
+		table.confluenceTable th.confluenceTh.note,table.confluenceTable th.confluenceTh.note>p,table.confluenceTable td.confluenceTd.highlight.note,table.confluenceTable td.confluenceTd.highlight.note>p,table.confluenceTable th.confluenceTh.highlight-yellow,table.confluenceTable th.confluenceTh.highlight-yellow>p,table.confluenceTable td.confluenceTd.highlight-yellow,table.confluenceTable td.confluenceTd.highlight-yellow>p{background-color:#ffd}
+		.confluenceTd{word-break:break-all !important;}
+		.confluenceTd{border:1px solid #ddd;padding:7px 10px;vertical-align:top;text-align:left}
+		.confluenceTable ol,.confluenceTable ul{margin-left:0;padding-left:22px}
+		.aui-lozenge{background:#ccc;border:1px solid #ccc;border-radius:3px;color:#333;display:inline-block;font-size:11px;font-weight:bold;line-height:1;margin:0;padding:2px 5px 1px 5px;text-align:center;text-decoration:none;text-transform:uppercase;}
+		.dp_tools{background-color:#fff;padding:8px 15px 8px 15px;text-align:right}
+		.dp_tools label{max-width:300px;height:30px;line-height:30px;float:left;font-size:18px;display:inline-block;overflow:hidden;text-align:left}
+		.dp_tools a.btns{color:#fff;width:110px;height:30px;line-height:30px;display:inline-block;text-align:center;background-color:#a1a1a1}
+		.dp_tools a.btns:hover{color:#fff;background-color:#333}
+	</style>
 </head>
 <body>
 	<!--<div id="fb-root"></div>
@@ -109,8 +127,11 @@
 
 			<div id="long-form" class="row splash" style="display: block;">
 				<div class="col-md-offset-1 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-8 section">
-						
-					<div style="padding: 40px 150px 15px 150px">
+					<div style="padding: 20px 15px">
+						<B><a href="search_home.html">云数据平台</a>> 数据筛选：股票数据 </B>
+					</div>
+					
+					<div style="padding: 10px 150px 15px 150px">
 							<div class="row">
 								<div class="col-xs-14">
 									<div class="row search-row hide-on-mobile-tag-tab">
@@ -128,34 +149,28 @@
 							</div>
 					</div>
 					<div style="padding: 7px 15px">
-						<B>筛选> 数据：股票数据 </B>
-					</div>
-					<div style="padding: 7px 15px">
 						<div style="float:left;width:70px">
-						  <span>数据：</span>
+						  <span>板块：</span>
 						</div>
 						<div class="stockdata" style="float:left">
 							<ul>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>股票数据</a>
+									<a href="#"  rel='nofollow'><i></i>全部A股</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>债券数据</a>
+									<a href="#"  rel='nofollow'><i></i>中小板</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>基金数据</a>
+									<a href="#"  rel='nofollow'><i></i>创业板</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>期货期权数据</a>
+									<a href="#"  rel='nofollow'><i></i>新浪行业板</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>外汇数据</a>
+									<a href="#"  rel='nofollow'><i></i>概念板块</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>指数数据</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>宏观行业数据</a>
+									<a href="#"  rel='nofollow'><i></i>地域板块</a>
 								</li>
 							</ul>
 						</div>
@@ -165,68 +180,33 @@
 					
 					<div style="padding: 7px 15px">
 						<div style="float:left;width:70px">
-						  <span>地区：</span>
+						  <span>指数成分：</span>
 						</div>
 						<div class="stockdata" style="float:left">
 							<ul>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>中国大陆</a>
+									<a href="#"  rel='nofollow'><i></i>上证指数</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>港股</a>
+									<a href="#"  rel='nofollow'><i></i>深证成指</a>
 								</li>
 								<li>
-									<a href="#"  rel='nofollow'><i></i>美股</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>欧洲</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>日本</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>新加坡澳大利亚</a>
+									<a href="#"  rel='nofollow'><i></i>沪深300</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<br/>
 
-					<div style="padding: 7px 15px">
-						<div style="float:left;width:70px">
-						  <span>数据：</span>
-						</div>
-						<div class="stockdata" style="float:left">
-							<ul>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>每日数据</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>日间数据</a>
-								</li>
-								<li>
-									<a href="#"  rel='nofollow'><i></i>公司报表</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 					<br/>
-					<div class="stockdata" style="float:right; padding:10px 15px 5px 15px;">
-						<ul>
-							<li>
-								每页显示
-							</li>
-							<li>
-								<a href="#"  rel='nofollow'><i></i>20</a>
-							</li>
-							<li>
-								<a href="#"  rel='nofollow'><i></i>40</a>
-							</li>
-							<li>
-								<a href="#"  rel='nofollow'><i></i>80</a>
-							</li>
-						</ul>
-					</div>
+					
+					<div class="dp_tools">
+            <a href="#" class="btns ng-binding" ng-click="like(productId, 'GDS')"><i class="fa fa-heart"></i>&nbsp;收藏</a>
+            <a ng-href="#" class="btns ng-binding" href="#">API文档</a>
+            <a ng-href="#" class="btns ng-binding" href="#">API测试</a>
+            <a ng-href="#" class="btns ng-binding" href="#">下载CSV文件</a>
+        </div>
+					
 					<br/>
 
 					<div style="padding: 2px 15px 15px 15px;">
@@ -333,36 +313,184 @@
 						</div>
 					</div>
 					
-					<div id="stockapi" style="padding: 2px 15px 50px 15px;">
-						<h2 id="股票数据" style="line-height">股票API接口</h2>
-						<h3 id="股票概况">股票API概况</h3>
-						<p>更多API的可参考<a href="#">官方API文档</a></p>
-						<h4 id="获取单支股票数据">获取单支股票数据</h4>
-						<p>获取单支股票的信息.</p>
-						<p><strong>调用方法</strong></p>
-						<pre class="prettyprint"><code class="language-python hljs ">get_security_info(code)</code></pre>
-						<p><strong>参数</strong></p>
-						<ul>
-							<li>code: 证券代码</li>
-						</ul>
-						<p><strong>返回值</strong></p>
-						<ul>
-							<li>一个对象, 有如下属性: <br>
-							<ul><li>display_name # 中文名称</li></ul></li>
-							<li>name # 缩写简称 <br>
-							<ul><li>start_date # 上市日期, [datetime.date] 类型</li>
-							<li>end_date # 退市日期， [datetime.date] 类型, 如果没有退市则为2200-01-01</li>
-							<li>type # 类型，stock(股票)，index(指数)，etf(ETF基金)，fja（分级A），fjb（分级B）</li>
-							<li>parent # 分级基金的母基金代码</li></ul></li>
-						</ul>
-						<p><strong>示例</strong></p>
-						<pre class="prettyprint">
-							<code class="language-python hljs ">
-								<span class="hljs-comment"># 输出平安银行信息</span>
-								log.info(get_security_info(<span class="hljs-string">'000001.XSHE'</span>))
-							</code>
-						</pre>
+					<h2 id="id-股票基本信息">getEquJY&nbsp;--股票基本信息</h2>
+					<div class="table-wrap" style="padding:10px 0 100px 0">
+						<table class="confluenceTable">
+							<tbody>
+								<tr>
+									<td class="highlight-grey confluenceTd" colspan="1" data-highlight-colour="grey">
+										<p>
+											<span class="status-macro aui-lozenge aui-lozenge-success">GET</span>
+										</p>
+									</td>
+									<td class="highlight-grey confluenceTd" data-highlight-colour="grey">
+										<p>/api/listedCorp/getEquJY.json 或 /api/listedCorp/getEquJY.csv</p>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="1" class="confluenceTd">说明</td>
+									<td class="confluenceTd">
+										<p>获取股票的基本信息，包含股票交易代码及其简称、股票类型、上市状态、上市板块、上市日期等；上市状态为最新数据，不显示历史变动信息。</p>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="1" class="confluenceTd">URL 用例</td>
+									<td colspan="1" class="confluenceTd">/api/listedCorp/getEquJY.json?field=&amp;secID=&amp;ticker=000001,000002,000006,000005,600000,600002,600003&amp;equTypeCD=&amp;listStatusCD=&amp;listSectorCD=&amp;exchangeCD=
+									</td>
+								</tr>
+								<tr>
+									<td colspan="1" class="confluenceTd">请求和返回字段</td>
+									<td class="confluenceTd">
+										<p>请求字段：</p>
+										<div class="table-wrap">
+											<table class="confluenceTable tablesorter">
+												<thead>
+													<tr class="sortableHeader">
+														<th class="confluenceTh sortableHeader" data-column="0">
+															<div class="tablesorter-header-inner">名称</div>
+														</th>
+														<th class="confluenceTh sortableHeader" data-column="1">
+															<div class="tablesorter-header-inner">类型</div>
+														</th>
+														<th class="confluenceTh sortableHeader" data-column="2">
+															<div class="tablesorter-header-inner">可空</div>
+														</th>
+														<th colspan="1" class="confluenceTh sortableHeader" data-column="3">
+															<div class="tablesorter-header-inner">描述</div>
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="confluenceTd">exchangeCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">三选一</td>
+														<td class="confluenceTd">股票交易市场，可选择：XSHG上海证券交易所，XSHE深圳证券交易所。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">secID</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">三选一</td>
+														<td class="confluenceTd">一只或多只证券代码，用,分隔，格式是“数字.交易所代码”，如000001.XSHE。如果为空，则为全部证券。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">ticker</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">三选一</td>
+														<td class="confluenceTd">一只或多只股票代码，用,分隔，如000001,000002。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">equTypeCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">是</td>
+														<td class="confluenceTd">股票类别，如A股，B股。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">listSectorCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">是</td>
+														<td class="confluenceTd">股票上市板块，可选择主板，中小板，创业板。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">listStatusCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">是</td>
+														<td class="confluenceTd">股票上市状态，可选择上市，暂停，退市等，默认为上市。</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">field</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">是</td>
+														<td class="confluenceTd">可选参数，用,分隔,默认为空，返回全部字段，不选即为默认值。返回字段见下方</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<p>&nbsp;</p>
+										<p>可选择的返回字段有：</p>
+										<div class="table-wrap">
+											<table class="confluenceTable tablesorter">
+												<thead>
+													<tr class="sortableHeader">
+														<th class="confluenceTh sortableHeader" data-column="0">
+															<div class="tablesorter-header-inner">字段</div>
+														</th>
+														<th class="confluenceTh sortableHeader" data-column="1"><div class="tablesorter-header-inner">类型</div>
+														</th>
+														<th class="confluenceTh sortableHeader" data-column="2"><div class="tablesorter-header-inner">描述</div>
+														</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="confluenceTd">ticker</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">股票代码</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">secID</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">证券展示代码</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">exchangeCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">交易市场</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">equTypeCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">股票类别</td>
+													</tr>
+													<tr>
+														<td class="confluenceTd">listSectorCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">上市板块</td></tr>
+													<tr>
+														<td class="confluenceTd">cnSpell</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">简称拼音</td></tr>
+													<tr>
+														<td class="confluenceTd">secShortName</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">证券简称</td></tr>
+													<tr>
+														<td class="confluenceTd">secShortNameEn</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">证券英文简称</td></tr>
+													<tr>
+														<td class="confluenceTd">secFullName</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">证券全称</td></tr>
+													<tr>
+														<td class="confluenceTd">secFullNameEn</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">证券英文全称</td></tr>
+													<tr>
+														<td class="confluenceTd">partyID</td>
+														<td class="confluenceTd">int64</td>
+														<td class="confluenceTd">机构内部ID</td></tr>
+													<tr>
+														<td class="confluenceTd">listDate</td>
+														<td class="confluenceTd">date</td>
+														<td class="confluenceTd">上市日期</td></tr>
+													<tr>
+														<td class="confluenceTd">listStatusCD</td>
+														<td class="confluenceTd">string</td>
+														<td class="confluenceTd">上市状态</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
+					
+					
+					
+					
 				</div>
 			</div>
 

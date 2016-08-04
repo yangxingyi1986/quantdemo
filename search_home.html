@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="QuantConnect" class="quantconnect"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="./css/quant.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.splash.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.fullwidth.css">
+	<link type="text/css" rel="stylesheet" href="./css/search.css">
+	<link rel="icon" href="./tmp/stock_ticker.ico" type="image/x-icon">
+	<script type="text/javascript" async="" src="./js/plusone.js"></script>
+	<script id="facebook-jssdk" src="./js/all.js#xfbml=1&appId=147227222023467"></script>
+	<script async="" src="./js/analytics.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./js/ext-all.js"></script>
+
+    <title>金水桥投资</title>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', './js/analytics.js', 'ga');
+        ga('create', 'UA-24797423-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<!--<div id="fb-root"></div>
+	<a id="top"></a>-->
+	<div class="height-fixer" style="min-height: 100%; position: relative;">
+		
+		<header>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid" style="padding: 0 15px;background-color: #194d5b;">
+					<div class="navbar-header">
+						<a id="logo" href="index.html" class="logo FL clearfix navbar-brand" title="">
+							&nbsp;金水桥投资&nbsp;
+						</a>
+					</div>
+					<div class="navbar-collapse collapse" id="qc-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="top blogButton hidden-sm hidden-md">
+								<a class="top" href="#" title="Quant interviews and strategy research.">
+									<i class="fa fa-list-alt"></i>
+									博客
+								</a>
+							</li>
+							<li class="divider-vertical top hidden-sm hidden-md "></li>
+							<li class="top nav-documentation">
+								<a href="#" class="top" title="Learn more about how to make the most of QuantConnect in the documentation">
+									<i class="fa fa-book"></i>
+									文档
+									</a>
+							</li>
+							<li class="divider-vertical top nav-documentation"></li>
+							<li class="top dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:10px;" title="Login to QuantConnect" role="button" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-lock"></i>
+									登录
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu" style="right: 0; left: auto;">
+									<li style="position: relative;min-width: 182px;">
+										<div class="contents">
+											<div class="oauth">
+												<div style="height: 40px; width: 170px;margin-top:10px;">
+													<a class="option" href="#" title="Sign Up to QuantConnect" style="float: left;left:0;">
+														<button type="button" class="btn btn-warning FL" style="margin: 0px 0px 0px 10px; width: 75px;">注册</button>
+													</a>
+													<a class="option" href="#" style="float: left;" rel="nofollow" title="Login with our existing account">
+														<button type="submit" class="btn btn-default FL" style="margin: 0px 10px 0px 0px; width: 75px;" rel="nofollow">登录</button>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+
+		<div class="container main-container">
+			<div class="row blue-banner" id="bluebanner">
+				<div class="blue-banner-div"></div>
+			</div>
+			<div class="hidden visible-xs visible-sm" style="height:40px;">&nbsp;</div>
+
+			<div id="long-form" class="row splash" style="display: block;">
+				<div class="col-md-offset-1 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-8 section">
+			
+					<div class="row section" style="margin: 40px 0px;">
+			
+						<div class="sidebar">
+							<h3>金融数据分类</h3>
+							<!--sidebar-info-->
+							<div class="sidebar-info">
+								<ul class="side-li">
+									<li class="s_1"><h3>股票数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_2"><h3>债券数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_3"><h3>基金数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_4"><h3>期货期权数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_5"><h3>外汇数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_6"><h3>指数数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+									<li class="s_7"><h3>宏观行业数据<span class="fa fa-angle-right fa-loc"></span></h3></li>
+								</ul>
+								<!--hidden-li-box-->
+								<ul class="hiden-box">
+									<li data-hidden="li" id="hiden-1">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-2">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-3">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-4">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-5">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-6">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-hidden="li" id="hiden-7">
+										<div class="hidden-title">
+											<a href="serch.html">股票市场数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">东亚期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+											<a href="serch.html">北美期货数据</a><span class="right-box"><i class="fa fa-angle-right"></i></span>
+										</div>
+										<div class="sub-nav-right">
+											<div class="cell-box">
+												<h1>中国内地</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>欧股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>港股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+										<div class="sub-nav-left">
+											<div class="cell-box">
+												<h1>日股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>美股</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+											<div class="cell-box">
+												<h1>新加坡澳大利亚</h1>
+												<div class="a-box">
+													<a href="serch.html">每日数据</a><span>|</span>
+													<a href="serch.html">日间数据</a><span>|</span>
+													<a href="serch.html">公司报表</a><span>|</span>
+													<a href="serch.html">股票指数</a><span>|</span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div id="banner_tabs" class="flexslider">
+							<ul class="slides">
+								<li>
+									<a title="" target="_blank" href="serch.html">
+										<img width="1920" height="482" alt="" style="background: url(./tmp/banner1.jpg) no-repeat center;" src="./tmp/alpha.png">
+									</a>
+								</li>
+								<li>
+									<a title="" href="serch.html">
+										<img width="1920" height="482" alt="" style="background: url(./tmp/banner2.jpg) no-repeat center;" src="./tmp/alpha.png">
+									</a>
+								</li>
+								<li>
+									<a title="" href="serch.html">
+										<img width="1920" height="482" alt="" style="background: url(./tmp/banner3.jpg) no-repeat center;" src="./tmp/alpha.png">
+									</a>
+								</li>
+							</ul>
+							<ul class="flex-direction-nav">
+								<li><a class="flex-prev" href="javascript:;">Previous</a></li>
+								<li><a class="flex-next" href="javascript:;">Next</a></li>
+							</ul>
+							<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+								<li><a>1</a></li>
+								<li><a>2</a></li>
+								<li><a>2</a></li>
+							</ol>
+						</div>
+			
+					</div>
+				</div>
+			</div>
+		</div> <!-- End of Container -->
+
+		<div class="footer-wrapper kk_footer clearfix " style="/*position: absolute; bottom: 0px; left: 0px; right: 0px; padding: 0px; max-width: 100%; background-color: #292929; border-top: 1px solid #000; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);*/">
+			<div class="inner auto_w">
+				<div class="wp20 fleft"><a href="#">金水桥投资</a></div>
+				<div class="wp20 fleft">
+					<div class="item title">关于</div>
+					<div class="item"><a href="#">关于我们</a></div>
+					<div class="item"><a href="#">加入我们</a></div>
+					<div class="item"><a href="#">联系我们</a></div>
+				</div>
+				<div class="wp20 fleft">
+					<div class="item title">数据</div>
+					<div class="item"><a href="#">指数数据</a></div>
+					<div class="item"><a href="#">基金数据</a></div>
+					<div class="item"><a href="#">股票财务数据</a></div>
+					<div class="item"><a href="#">金融期货数据</a></div>
+					<div class="item"><a href="#">行业板块数据</a></div>
+				</div>
+				<div class="wp20 fleft">
+					<div class="item title">帮助</div>
+					<div class="item"><a href="#">常见问题</a></div>
+					<div class="item"><a href="#">API文档</a></div>
+					<div class="item"><a href="#">更新日志</a></div>
+				</div>
+				<div class="wp20 fleft">
+					<div class="item title">友情链接</div>
+					<div class="item"><a href="#">金水桥科技</a></div>
+				</div>
+				<div class="copyright clear">金水桥科技 © 2016. All Rights Reserved.</div>
+			</div>
+		</div>
+
+	</div> <!-- End of Wrapper -->
+
+	<script type="text/javascript" src="./js/search_home.js"></script>
+	<script type="text/javascript" src="./js/slider.js"></script>
+</body>
+</html>

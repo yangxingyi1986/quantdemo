@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="QuantConnect" class="quantconnect"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="./css/quant.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.splash.css">
+	<link type="text/css" rel="stylesheet" href="./css/qc.fullwidth.css">
+	<link type="text/css" rel="stylesheet" href="./css/quantassetmanagement.css">
+	<link rel="icon" href="./tmp/stock_ticker.ico" type="image/x-icon">
+	<script type="text/javascript" async="" src="./js/plusone.js"></script>
+	<script id="facebook-jssdk" src="./js/all.js#xfbml=1&appId=147227222023467"></script>
+	<script async="" src="./js/analytics.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./js/echarts.min.js"></script>
+	<script type="text/javascript">
+		function changeframe(url){
+			$("#content_frame").attr("src",url);
+		}
+	</script>
+
+    <title>金水桥投资</title>
+    <script>
+	</script>
+</head>
+<body>
+	<div class="height-fixer" style="min-height: 100%; position: relative;">
+		
+		<header>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid" style="padding: 0 15px;background-color: #194d5b;">
+					<div class="navbar-header">
+						<a id="logo" href="index.html" class="logo FL clearfix navbar-brand" title="">
+							&nbsp;金水桥投资&nbsp;
+						</a>
+					</div>
+					<div class="navbar-collapse collapse" id="qc-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="top blogButton hidden-sm hidden-md">
+								<a class="top" href="#" title="Quant interviews and strategy research.">
+									<i class="fa fa-list-alt"></i>
+									博客
+								</a>
+							</li>
+							<li class="divider-vertical top hidden-sm hidden-md "></li>
+							<li class="top nav-documentation">
+								<a href="#" class="top" title="">
+									<i class="fa fa-book"></i>
+									文档
+									</a>
+							</li>
+							<li class="divider-vertical top nav-documentation"></li>
+							<li class="top dropdown">
+								<a href="#" class="dropdown-toggle" style="padding-left:10px;" data-toggle="dropdown" title="" role="button" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-lock"></i>
+									&nbsp;登录
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu" style="right: 0; left: auto;">
+									<li style="position: relative;min-width: 182px;">
+										<div class="contents">
+											<div class="oauth">
+												<div style="height: 40px; width: 170px;margin-top:10px;">
+													<a class="option" href="#" title="Sign Up to QuantConnect" style="float: left;left:0;">
+														<button type="button" class="btn btn-warning FL" style="margin: 0px 0px 0px 10px; width: 75px;">注册</button>
+													</a>
+													<a class="option" href="#" style="float: left;" rel="nofollow" title="Login with our existing account">
+														<button type="submit" class="btn btn-default FL" style="margin: 0px 10px 0px 0px; width: 75px;" rel="nofollow">登录</button>
+													</a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<div id="body-container" class="container full-width body-container show-menu" style="left: 0px;">
+        <div class="row body-row">
+            <div id="menu" style="width:20%;height:100%;padding:10px 10px;float:left;">
+            	<div class="row">
+					<a href="#" onclick="changeframe('https://www.baidu.com')"><div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-university"></span>
+						<div class="services-content">
+							<h5>概览</h5>
+						</div>
+					</div></a>
+					<div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-pie-chart"></span>
+						<div class="services-content">
+							<h5>资产组合</h5>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-credit-card-alt"></span>
+						<div class="services-content">
+							<h5>收益绩效</h5>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-bolt"></span>
+						<div class="services-content">
+							<h5>风险价值</h5>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-line-chart"></span>
+						<div class="services-content">
+							<h5>CAPM</h5>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 services text-center">
+						<span class="icon fa fa-line-chart"></span>
+						<div class="services-content">
+							<h5>Black Litterman</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div id="content" style="width:80%;height:100%;float:left;">
+            	<iframe id="content_frame" width=100% height=100% marginwidth=0 marginheight=0 src="assetmanagement/general.html" >
+            	</iframe> 
+			</div>
+        </div>
+    </div>
+		
+		
+	</div>
+
+</body>
+</html>
