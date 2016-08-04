@@ -3,11 +3,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="icon" href="../tmp/stock_ticker.ico" type="image/x-icon">
-	<script type="text/javascript" src="../js/react.min.js"></script>
-	<script type="text/javascript" src="../js/react-dom.min.js"></script>
-	<script type="text/javascript" src="../js/browser.min.js"></script>
+	<script src="../js/react.min.js"></script>
+	<script src="../js/react-dom.min.js"></script>
+	<script src="../js/browser.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="../js/react/fixed-data-table.min.js"></script>
+	<script type="text/javascript" src="../js/require.js"></script>
 
     <title>金水桥投资</title>
     <script>
@@ -16,26 +16,55 @@
 <body>
 	<div id="tabledata"></div>
 	<script type="text/babel">
-		import React from 'react.min';
-		import ReactDOM from 'react-dom';
-		const {Table, Column, ColumnGroup, Cell} = FixedDataTable;
 
+		// Table data as a list of array.
 		const rows = [
 			['a1', 'b1', 'c1'],
 			['a2', 'b2', 'c2'],
 			['a3', 'b3', 'c3']
 		];
+
+		// Render your table
 		ReactDOM.render(
-				<Table rowHeight={50} rowsCount={rows.length} width={5000} height={5000} headerHeight={50}>
-					<Column header={<Cell>Col 1</Cell>} width={2000} cell={<Cell>Column 1 static content</Cell>}></Column>
-					<Column header={<Cell>Col 2</Cell>} width={1000} cell={<MyCustomCell mySpecialProp="column2" />}></Column>
-					<Column header={<Cell>Col 3</Cell>} width={2000} cell={({rowIndex, ...props}) => (
-							<Cell {...props}>
-								Data for column 3: {rows[rowIndex][2]}
-							</Cell>
-					)}></Column>
-				</Table>,
-				document.getElementById("tabledata")
+			<table border="1">
+				<tr>
+					<th>名称</th>
+					<th>符号</th>
+					<th>最后价格</th>
+					<th>变动</th>
+					<th>市场CAP</th>
+					<th>容量</th>
+					<th>开市</th>
+					<th>最高</th>
+					<th>最低</th>
+					<th>日盈余</th>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+				<tr>
+					<td>alphabet公司</td><td>Google</td><td>762.14</td><td>+4.49(0.59%)</td><td>516.90B</td><td></td><td>758.97</td><td>764.45</td><td>755.93</td><td></td>
+				</tr>
+			</table>,
+		  document.getElementById('tabledata')
 		);
 	</script>
 
